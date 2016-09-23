@@ -610,6 +610,9 @@ Licensed under the MIT license.
                     // position of default legend container within plot
                     position: "ne",
 
+                    // left align legend with grid when legend is out of the plot
+                    leftAlign: true,
+
                     // distance from grid edge to default legend container within plot
                     margin: 5,
 
@@ -2002,7 +2005,7 @@ Licensed under the MIT license.
             if (options.legend.show && legendOutOfGrid()) {
                 alignLegend({
                     "bottom": originalBottom,
-                    "left":   plotOffset.left,
+                    "left":   (options.legend.leftAlign ? plotOffset.left : 0),
                     "top":    "auto",
                     "right":  "auto"
                 });
